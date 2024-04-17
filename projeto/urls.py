@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 # Importar as classes da views
-from curriculum42.views import UserNew, UserList
+from curriculum42.views import UserNew, UserList, UserUpdate, UserDetail, UserDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +26,8 @@ urlpatterns = [
     # Chamar o camninho para a view
     path('user/new', UserNew.as_view(), name = 'user-new'),
     path('user/list', UserList.as_view(), name = 'user-list'),
+    # Injetar variavel do tipo 'int' para chamar o ID
+    path('user/<int:pk>/update', UserUpdate.as_view(), name = 'user-update'),
+    path('user/<int:pk>/detail', UserDetail.as_view(), name = 'user-detail'),
+    path('user/<int:pk>/delete', UserDelete.as_view(), name = 'user-delete'),
 ]
