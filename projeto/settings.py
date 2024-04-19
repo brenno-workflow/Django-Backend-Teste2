@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'projeto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',   # Altera o motor de banco de dados para MySQL
+        'NAME': 'curriculum42_api',                 # Nome do banco de dados
+        'USER': 'root',                         # Usuário do banco de dados (no caso, 'root')
+        'PASSWORD': '',                         # Senha do banco de dados (se houver)
+        'HOST': 'localhost',                    # Host do banco de dados (no caso, 'localhost')
+        'PORT': '3306',                         # Porta do banco de dados (opcional, padrão para MySQL é 3306)
     }
 }
 
